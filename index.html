@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mavi Kafe & Restaurant | Yalova</title>
+<meta name="description" content="Yalova'da Ege esintili, doğal ışıklı bir kahvaltı, kahve ve restoran deneyimi. Dijital menü, online rezervasyon ve daha fazlası — Mavi Kafe & Restaurant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFCFA;
+    --paper-alt:#F0F3F1;
+    --paper-deep:#E4EBE7;
+    --ink:#1E2422;
+    --ink-soft:#5B655F;
+    --ink-faint:#8B948B;
+    --aegean:#1D4E6E;
+    --aegean-deep:#12374F;
+    --aegean-bright:#2E7BA6;
+    --sand:#B99567;
+    --line:#D4DED9;
+    --line-soft:#E4EAE6;
+    --white:#FFFFFF;
+    --radius-img: 2px;
+    --maxw: 1320px;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;}
+  body{scrollbar-width:none;-ms-overflow-style:none;}
+  html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block; object-fit:cover;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:500; letter-spacing:-0.01em; color:var(--ink);}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+  ::selection{background:var(--aegean); color:var(--white);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- focus ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--aegean); outline-offset:3px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    position:sticky; top:0; z-index:200;
+    background:rgba(251,252,250,0.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+    transition:padding .3s ease;
+  }
+  .header-inner{
+    max-width:var(--maxw); margin:0 auto; padding:22px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    transition:padding .3s ease;
+  }
+  header.site.shrink .header-inner{padding:12px 32px;}
+  .logo{
+    font-family:var(--serif); font-size:1.5rem; font-weight:500;
+    display:flex; align-items:baseline; gap:8px; color:var(--aegean-deep);
+  }
+  .logo .mark{color:var(--aegean-bright); font-style:italic;}
+  nav.main-nav{display:flex; gap:36px;}
+  nav.main-nav a{
+    font-size:0.94rem; font-weight:600; color:var(--ink-soft);
+    position:relative; padding:4px 0; transition:color .2s;
+  }
+  nav.main-nav a:hover{color:var(--aegean-deep);}
+  nav.main-nav a::after{
+    content:''; position:absolute; left:0; right:0; bottom:-2px; height:1px;
+    background:var(--aegean-bright); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  nav.main-nav a:hover::after{transform:scaleX(1);}
+  .header-actions{display:flex; align-items:center; gap:18px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; font-weight:700; font-size:0.88rem;
+    border:1px solid transparent; cursor:pointer; letter-spacing:0.01em;
+    transition:background .2s, color .2s, border-color .2s, transform .15s;
+  }
+  .btn-primary{background:var(--aegean-deep); color:var(--white);}
+  .btn-primary:hover{background:var(--aegean-bright);}
+  .btn-outline{background:transparent; color:var(--aegean-deep); border-color:var(--aegean-deep);}
+  .btn-outline:hover{background:var(--aegean-deep); color:var(--white);}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--aegean-deep); color:var(--aegean-deep);}
+
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:8px;}
+  .hamburger span{width:24px; height:2px; background:var(--ink); display:block; transition:transform .25s, opacity .25s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-nav{
+    display:none; position:fixed; inset:0 0 0 auto; width:min(320px,86vw); height:100vh;
+    background:var(--paper); z-index:300; padding:100px 32px 32px;
+    transform:translateX(100%); transition:transform .35s ease; box-shadow:-8px 0 30px rgba(0,0,0,0.08);
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav a{display:block; padding:14px 0; font-size:1.1rem; font-family:var(--serif); border-bottom:1px solid var(--line-soft);}
+  .scrim{position:fixed; inset:0; background:rgba(20,24,22,0.35); z-index:290; opacity:0; pointer-events:none; transition:opacity .3s;}
+  .scrim.open{opacity:1; pointer-events:auto;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; height:92vh; min-height:600px; max-height:960px;
+    display:flex; align-items:flex-end;
+    color:var(--white); overflow:hidden;
+  }
+  .hero-media{position:absolute; inset:0;}
+  .hero-media img{width:100%; height:100%; object-fit:cover;}
+  .hero-media::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(18,23,20,0.15) 0%, rgba(15,20,18,0.08) 40%, rgba(12,16,15,0.72) 100%);
+  }
+  .hero-content{position:relative; z-index:2; width:100%; padding-bottom:64px;}
+  .hero-eyebrow{
+    font-size:0.82rem; letter-spacing:0.14em; font-weight:700; text-transform:uppercase;
+    color:#CFE1EC; margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow .dot{width:6px; height:6px; background:#7FB8D6; border-radius:50%;}
+  .hero h1{
+    font-size:clamp(2.6rem, 6.4vw, 5rem); line-height:1.02; color:var(--white);
+    max-width:820px; font-weight:400;
+  }
+  .hero h1 em{font-style:italic; font-weight:300;}
+  .hero-sub{
+    margin-top:22px; font-size:1.1rem; max-width:480px; color:#EDE7DB; font-weight:400;
+  }
+  .hero-ctas{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
+  .hero .btn-primary{background:var(--white); color:var(--aegean-deep);}
+  .hero .btn-primary:hover{background:#EAF2F6;}
+  .hero .btn-outline{border-color:rgba(255,255,255,0.55); color:var(--white);}
+  .hero .btn-outline:hover{background:rgba(255,255,255,0.12); border-color:var(--white);}
+
+  .hero-strip{
+    position:relative; z-index:2; margin-top:56px;
+    display:flex; gap:0; border-top:1px solid rgba(255,255,255,0.22);
+    padding-top:24px; flex-wrap:wrap;
+  }
+  .hero-strip div{padding-right:40px; margin-right:40px; border-right:1px solid rgba(255,255,255,0.2);}
+  .hero-strip div:last-child{border-right:none;}
+  .hero-strip .label{font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:#B9CBD4; margin-bottom:6px;}
+  .hero-strip .value{font-family:var(--serif); font-size:1.15rem; color:var(--white);}
+
+  /* ---------- QUICK INFO ---------- */
+  .quick-info{
+    background:var(--aegean-deep); color:var(--white);
+  }
+  .quick-info .wrap{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    padding:0;
+  }
+  .quick-info .item{
+    padding:34px 28px; border-right:1px solid rgba(255,255,255,0.14);
+  }
+  .quick-info .item:last-child{border-right:none;}
+  .quick-info .k{font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:#9EC2D4; margin-bottom:10px;}
+  .quick-info .v{font-family:var(--serif); font-size:1.3rem;}
+  .quick-info .v small{display:block; font-family:var(--sans); font-size:0.85rem; font-weight:500; color:#CBDDE6; margin-top:4px;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .section{padding:120px 0;}
+  .section.tight{padding:88px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:40px;
+    margin-bottom:64px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(2rem,4vw,3rem); max-width:640px; line-height:1.08;}
+  .section-head p{max-width:380px; color:var(--ink-soft); font-size:1.02rem; padding-bottom:6px;}
+  .kicker{font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--aegean-bright); font-weight:700; margin-bottom:14px; display:block;}
+
+  .bg-alt{background:var(--paper-alt);}
+
+  /* ---------- MAVI'DE BUGÜN (editorial) ---------- */
+  .today-grid{
+    display:grid; grid-template-columns:1.35fr 1fr; gap:24px;
+  }
+  .today-grid .col{display:flex; flex-direction:column; gap:24px;}
+  .today-card{
+    position:relative; overflow:hidden; min-height:320px;
+    display:flex; align-items:flex-end; color:var(--white);
+  }
+  .today-card img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .7s ease;}
+  .today-card:hover img{transform:scale(1.05);}
+  .today-card::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,20,18,0) 35%, rgba(10,14,13,0.78) 100%);}
+  .today-card .cap{position:relative; z-index:2; padding:28px;}
+  .today-card .tag{font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:#CFE1EC; margin-bottom:8px; display:block;}
+  .today-card h3{font-size:1.5rem; color:var(--white); font-weight:400;}
+  .today-card.large{min-height:668px;}
+  .today-card.medium{min-height:322px;}
+
+  /* ---------- MENU ---------- */
+  .menu-filters{
+    display:flex; gap:10px; flex-wrap:wrap; margin-bottom:56px;
+    border-bottom:1px solid var(--line); padding-bottom:32px;
+  }
+  .filter-pill{
+    padding:9px 20px; border:1px solid var(--line); background:transparent;
+    font-size:0.86rem; font-weight:600; color:var(--ink-soft); border-radius:999px;
+    transition:all .2s;
+  }
+  .filter-pill:hover{border-color:var(--aegean-bright); color:var(--aegean-deep);}
+  .filter-pill.active{background:var(--aegean-deep); border-color:var(--aegean-deep); color:var(--white);}
+
+  .menu-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:0 56px;
+  }
+  .menu-item{
+    display:flex; gap:20px; padding:26px 0; border-bottom:1px solid var(--line-soft);
+    align-items:flex-start;
+  }
+  .menu-item .thumb{
+    width:84px; height:84px; flex-shrink:0; overflow:hidden; background:var(--paper-deep);
+  }
+  .menu-item .thumb img{width:100%; height:100%; object-fit:cover;}
+  .menu-item .body{flex:1; min-width:0;}
+  .menu-item .row1{display:flex; justify-content:space-between; align-items:baseline; gap:14px;}
+  .menu-item h4{font-size:1.12rem; font-weight:600; font-family:var(--serif); font-weight:500;}
+  .menu-item .price{font-weight:700; color:var(--aegean-deep); white-space:nowrap; font-family:var(--serif); font-size:1.05rem;}
+  .menu-item p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px; line-height:1.5;}
+  .badge{
+    display:inline-block; font-size:0.66rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--aegean-bright); border:1px solid var(--aegean-bright); padding:2px 8px; border-radius:999px; margin-top:8px;
+  }
+  .menu-item.hidden{display:none;}
+  .menu-note{margin-top:48px; color:var(--ink-faint); font-size:0.86rem; border-top:1px solid var(--line); padding-top:24px;}
+
+  /* ---------- FEATURED DISHES ---------- */
+  .featured-grid{
+    display:grid; grid-template-columns:repeat(6, 1fr); gap:20px;
+  }
+  .featured-item{position:relative; overflow:hidden;}
+  .featured-item img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
+  .featured-item:hover img{transform:scale(1.04);}
+  .featured-item .cap{
+    position:absolute; left:0; right:0; bottom:0; padding:20px; z-index:2; color:var(--white);
+  }
+  .featured-item::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(8,11,10,0.75) 100%);}
+  .featured-item .cap h4{color:var(--white); font-size:1.15rem; font-weight:400;}
+  .featured-item .cap span{font-size:0.78rem; color:#D9CDB8; letter-spacing:0.04em;}
+  .fi-1{grid-column:span 3; grid-row:span 2; aspect-ratio:3/4;}
+  .fi-2{grid-column:span 3; aspect-ratio:16/9;}
+  .fi-3{grid-column:span 3; aspect-ratio:16/9;}
+  .fi-4{grid-column:span 2; aspect-ratio:1/1;}
+  .fi-5{grid-column:span 2; aspect-ratio:1/1;}
+  .fi-6{grid-column:span 2; aspect-ratio:1/1;}
+
+  /* ---------- STORY / KITCHEN (split) ---------- */
+  .split{
+    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+  }
+  .split.reverse .split-media{order:2;}
+  .split.reverse .split-text{order:1;}
+  .split-media{position:relative;}
+  .split-media img{width:100%; aspect-ratio:4/5; object-fit:cover;}
+  .split-media .float-tag{
+    position:absolute; bottom:-24px; left:-24px; background:var(--white); padding:20px 26px;
+    box-shadow:0 18px 40px rgba(20,30,32,0.12); max-width:220px;
+  }
+  .float-tag .num{font-family:var(--serif); font-size:1.8rem; color:var(--aegean-deep);}
+  .float-tag .txt{font-size:0.82rem; color:var(--ink-soft); margin-top:2px;}
+  .split-text h2{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-bottom:24px; line-height:1.12;}
+  .split-text p{color:var(--ink-soft); font-size:1.03rem; margin-bottom:18px; max-width:480px;}
+  .split-text .signature{font-family:var(--serif); font-style:italic; color:var(--aegean-deep); margin-top:28px; font-size:1.1rem;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-tabs{display:flex; gap:28px; margin-bottom:40px; border-bottom:1px solid var(--line); flex-wrap:wrap;}
+  .gallery-tab{
+    padding:12px 2px; font-size:0.92rem; font-weight:700; color:var(--ink-faint);
+    border-bottom:2px solid transparent; margin-bottom:-1px; background:none; border-left:none; border-right:none; border-top:none;
+  }
+  .gallery-tab.active{color:var(--aegean-deep); border-color:var(--aegean-deep);}
+  .masonry{
+    columns:4 220px; column-gap:16px;
+  }
+  .masonry .g-item{
+    break-inside:avoid; margin-bottom:16px; position:relative; overflow:hidden; cursor:zoom-in; background:var(--paper-deep);
+  }
+  .masonry .g-item img{width:100%; display:block; transition:transform .5s ease;}
+  .masonry .g-item:hover img{transform:scale(1.04);}
+  .masonry .g-item.hidden{display:none;}
+
+  .lightbox{
+    position:fixed; inset:0; background:rgba(10,13,12,0.94); z-index:500;
+    display:none; align-items:center; justify-content:center; padding:5vh 5vw;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%; max-height:88vh; object-fit:contain; box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+  .lightbox-close, .lightbox-prev, .lightbox-next{
+    position:fixed; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); color:var(--white);
+    width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem;
+    transition:background .2s;
+  }
+  .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover{background:rgba(255,255,255,0.2);}
+  .lightbox-close{top:28px; right:28px;}
+  .lightbox-prev{left:28px; top:50%; transform:translateY(-50%);}
+  .lightbox-next{right:28px; top:50%; transform:translateY(-50%);}
+  .lightbox-caption{position:fixed; bottom:28px; left:0; right:0; text-align:center; color:#DDD; font-size:0.88rem;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .rating-banner{
+    display:flex; align-items:center; gap:24px; margin-bottom:52px; flex-wrap:wrap;
+    padding:28px 32px; background:var(--white); border:1px solid var(--line-soft);
+  }
+  .rating-score{font-family:var(--serif); font-size:2.6rem; color:var(--aegean-deep); line-height:1;}
+  .rating-stars{color:#D9A63C; font-size:1.1rem; letter-spacing:2px;}
+  .rating-meta{font-size:0.85rem; color:var(--ink-faint);}
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-soft);}
+  .testi-card{background:var(--white); padding:34px 30px;}
+  .testi-card .stars{color:#D9A63C; margin-bottom:16px; font-size:0.95rem; letter-spacing:1px;}
+  .testi-card p{color:var(--ink-soft); font-size:0.98rem; line-height:1.6; margin-bottom:20px;}
+  .testi-card .who{display:flex; align-items:center; gap:12px;}
+  .testi-avatar{
+    width:38px; height:38px; border-radius:50%; background:var(--aegean-deep); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:0.95rem;
+  }
+  .testi-name{font-weight:700; font-size:0.9rem;}
+  .testi-date{font-size:0.78rem; color:var(--ink-faint);}
+
+  /* ---------- RESERVATION ---------- */
+  .reserve-section{background:var(--aegean-deep); color:var(--white);}
+  .reserve-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:80px; align-items:flex-start;}
+  .reserve-grid .kicker{color:#9EC2D4;}
+  .reserve-grid h2{color:var(--white); font-size:clamp(2rem,3.6vw,2.8rem); margin-bottom:22px;}
+  .reserve-grid > div:first-child p{color:#C9DAE1; font-size:1.02rem; margin-bottom:32px; max-width:420px;}
+  .reserve-facts{display:flex; flex-direction:column; gap:20px;}
+  .reserve-facts .f{display:flex; gap:14px; align-items:flex-start;}
+  .reserve-facts .f .ic{color:#7FB8D6; font-family:var(--serif); font-size:1.2rem; width:24px;}
+  .reserve-facts .f .tx b{display:block; font-size:0.92rem;}
+  .reserve-facts .f .tx span{font-size:0.85rem; color:#B9CBD4;}
+
+  .res-form{background:var(--white); padding:44px; color:var(--ink);}
+  .res-form .grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-size:0.82rem; font-weight:700; margin-bottom:8px; color:var(--ink-soft);}
+  .field input, .field select, .field textarea{
+    width:100%; padding:13px 14px; border:1px solid var(--line); background:var(--paper);
+    font-family:var(--sans); font-size:0.95rem; color:var(--ink); transition:border-color .2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--aegean-bright); outline:none;}
+  .field textarea{resize:vertical; min-height:80px;}
+  .res-submit{width:100%; padding:16px; font-size:0.95rem; margin-top:6px;}
+  .res-confirm{display:none; text-align:center; padding:40px 20px;}
+  .res-confirm.show{display:block;}
+  .res-confirm .check{
+    width:64px; height:64px; border-radius:50%; background:var(--aegean-deep); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin:0 auto 22px;
+  }
+  .res-confirm h3{font-size:1.5rem; margin-bottom:10px;}
+  .res-confirm p{color:var(--ink-soft); max-width:360px; margin:0 auto 24px;}
+  .res-form-body.hide{display:none;}
+
+  /* ---------- GROUP / ÖZEL GÜNLER ---------- */
+  .group-band{
+    display:grid; grid-template-columns:1fr 1fr;
+    background:var(--paper-alt);
+  }
+  .group-media{position:relative; min-height:420px;}
+  .group-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .group-text{padding:80px 64px; display:flex; flex-direction:column; justify-content:center;}
+  .group-text h2{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-bottom:20px;}
+  .group-text p{color:var(--ink-soft); margin-bottom:28px; max-width:440px;}
+  .group-list{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:32px;}
+  .group-list span{
+    padding:9px 18px; border:1px solid var(--line); font-size:0.86rem; font-weight:600; color:var(--ink-soft);
+  }
+
+  /* ---------- HOURS + LOCATION ---------- */
+  .hl-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:0; border:1px solid var(--line);}
+  .hours-col{padding:56px 48px; border-right:1px solid var(--line);}
+  .hours-col h3{font-size:1.6rem; margin-bottom:32px;}
+  .hours-row{display:flex; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--line-soft); font-size:0.95rem;}
+  .hours-row .d{font-weight:700;}
+  .hours-row .t{color:var(--ink-soft);}
+  .hours-row.today{color:var(--aegean-deep);}
+  .hours-row.today .d, .hours-row.today .t{color:var(--aegean-deep); font-weight:700;}
+  .contact-mini{margin-top:32px; display:flex; flex-direction:column; gap:12px;}
+  .contact-mini a{font-weight:700; color:var(--aegean-deep); font-size:0.98rem;}
+  .contact-mini span{font-size:0.86rem; color:var(--ink-faint); display:block;}
+
+  .map-col{position:relative; min-height:420px; background:var(--paper-deep);}
+  .map-fallback{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:
+      linear-gradient(rgba(29,78,110,0.06) 1px, transparent 1px) 0 0/34px 34px,
+      linear-gradient(90deg, rgba(29,78,110,0.06) 1px, transparent 1px) 0 0/34px 34px,
+      var(--paper-deep);
+  }
+  .map-pin{
+    width:52px; height:52px; border-radius:50% 50% 50% 0; background:var(--aegean-deep); transform:rotate(-45deg);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 10px 24px rgba(29,78,110,0.35);
+  }
+  .map-pin span{transform:rotate(45deg); color:var(--white); font-family:var(--serif); font-size:1.2rem;}
+  .map-fallback p{font-weight:700; color:var(--ink);}
+  .map-fallback small{color:var(--ink-faint); margin-top:4px;}
+  .map-fallback .btn{margin-top:20px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink); color:#D8DCD8; padding:88px 0 0;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:64px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-logo{font-family:var(--serif); font-size:1.5rem; color:var(--white); margin-bottom:16px;}
+  .footer-grid p{color:#9AA39D; font-size:0.92rem; max-width:280px; line-height:1.6;}
+  .footer-col h5{font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:#7C857E; margin-bottom:20px;}
+  .footer-col a{display:block; padding:7px 0; color:#C7CCC5; font-size:0.92rem; transition:color .2s;}
+  .footer-col a:hover{color:var(--white);}
+  .footer-bottom{
+    padding:28px 0 110px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    font-size:0.82rem; color:#7C857E;
+  }
+  @media (min-width:769px){.footer-bottom{padding-bottom:28px;}}
+
+  /* ---------- MOBILE STICKY BAR ---------- */
+  .mobile-bar{
+    display:none; position:fixed; bottom:0; left:0; right:0; z-index:250;
+    background:var(--white); border-top:1px solid var(--line);
+    padding:10px 6px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -6px 24px rgba(20,30,32,0.08);
+  }
+  .mobile-bar .row{display:grid; grid-template-columns:repeat(4,1fr);}
+  .mobile-bar a{
+    display:flex; flex-direction:column; align-items:center; gap:4px; font-size:0.68rem; font-weight:700;
+    color:var(--ink-soft);
+  }
+  .mobile-bar a .ic{font-size:1.15rem; font-family:var(--serif); color:var(--aegean-deep);}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:1100px){
+    .today-grid{grid-template-columns:1fr;}
+    .today-card.large{min-height:420px;}
+    .featured-grid{grid-template-columns:repeat(4,1fr);}
+    .fi-1{grid-column:span 4; grid-row:span 1; aspect-ratio:16/9;}
+    .fi-2,.fi-3{grid-column:span 2;}
+    .fi-4,.fi-5,.fi-6{grid-column:span 2;}
+    .reserve-grid{grid-template-columns:1fr; gap:48px;}
+    .group-band{grid-template-columns:1fr;}
+    .group-media{min-height:280px;}
+    .hl-grid{grid-template-columns:1fr;}
+    .hours-col{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .header-actions .btn-primary{display:none;}
+    .hamburger{display:flex;}
+    .mobile-nav{display:block;}
+    .menu-grid{grid-template-columns:1fr;}
+    .quick-info .wrap{grid-template-columns:repeat(2,1fr);}
+    .quick-info .item{border-bottom:1px solid rgba(255,255,255,0.14);}
+    .split{grid-template-columns:1fr; gap:40px;}
+    .split.reverse .split-media, .split.reverse .split-text{order:initial;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:36px;}
+    .mobile-bar{display:block;}
+    body{padding-bottom:0;}
+    .masonry{columns:2;}
+  }
+
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .section{padding:76px 0;}
+    .hero{height:100vh; min-height:560px;}
+    .hero-strip{gap:16px 0;}
+    .hero-strip div{padding-right:20px; margin-right:20px;}
+    .quick-info .wrap{grid-template-columns:1fr 1fr;}
+    .quick-info .item{padding:24px 18px;}
+    .featured-grid{grid-template-columns:repeat(2,1fr);}
+    .fi-1{grid-column:span 2;}
+    .fi-2,.fi-3,.fi-4,.fi-5,.fi-6{grid-column:span 2; aspect-ratio:4/3;}
+    .res-form{padding:26px;}
+    .res-form .grid2{grid-template-columns:1fr;}
+    .group-text{padding:48px 26px;}
+    .footer-grid{grid-template-columns:1fr; gap:32px; padding-bottom:40px;}
+    .testi-grid{grid-template-columns:1fr;}
+    .rating-banner{padding:22px;}
+    .masonry{columns:1;}
+  }
+
+  /* Aegean daylight: quiet surfaces, photography and considered typography. */
+  section[id]{scroll-margin-top:96px}
+  .hero{height:82vh;min-height:600px;max-height:850px;margin:0 20px}
+  .hero-content{padding-bottom:52px}
+  .hero h1{font-size:clamp(3.5rem,7.4vw,7rem);letter-spacing:-.045em}
+  .hero-strip{margin-top:38px}
+  .hero-strip .label,.hero-strip .value{display:block}
+  .hero-sub{line-height:1.75;max-width:420px}
+  .quick-info{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+  .quick-info .item{padding:27px 28px;border-color:var(--line)}
+  .quick-info .k{color:var(--aegean)}
+  .quick-info .v small{color:var(--ink-soft)}
+  .section{padding:100px 0}
+  .visit-section{border-top:1px solid var(--line)}
+  .visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:45px}
+  .visit-grid article{border-top:1px solid var(--aegean);padding-top:25px}
+  .visit-label{font-size:12px;letter-spacing:.13em;color:var(--aegean)}
+  #yorumlar .testi-card{display:flex;flex-direction:column;gap:18px;background:var(--paper)}
+  #yorumlar .testi-card blockquote{margin:0;flex:1;color:var(--ink-soft);font-size:16px;line-height:1.85}
+  #yorumlar .testi-card blockquote p{font:inherit;color:inherit;margin:0}
+  #yorumlar .testi-card .review-topic{color:var(--aegean);font-size:12px;font-weight:700;letter-spacing:.06em}
+  #yorumlar .testi-avatar{font-size:13px;flex-shrink:0}
+  #yorumlar .reviews-note{font-size:13px;line-height:1.75}
+  @media(min-width:601px) and (max-width:1024px){#yorumlar .testi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .visit-grid h3{font-size:25px;margin:24px 0 16px}
+  .visit-grid p{font-size:16px;line-height:1.85;color:var(--ink-soft)}
+  .visit-grid a{display:flex;justify-content:space-between;margin-top:25px;color:var(--aegean);font-size:14px;font-weight:700}
+  .g-item:focus-visible{outline:3px solid var(--aegean);outline-offset:5px}
+  .reserve-grid h2{line-height:1.13}
+  .res-submit{justify-content:space-between}
+  .hours-row.today{background:transparent}
+  .map-col{background:repeating-linear-gradient(28deg,transparent 0 70px,#dbe4dd 71px 74px,transparent 75px 150px),repeating-linear-gradient(115deg,#edf1eb 0 100px,#fff 101px 109px,#edf1eb 110px 180px)}
+  .map-fallback{background:rgba(247,250,245,.85);margin:25px;padding:35px 20px}
+  .map-fallback small{color:var(--ink-soft)}
+  @media(max-width:1024px){nav.main-nav{gap:18px}.header-inner{gap:18px}.hero{margin:0 12px}.visit-grid{gap:24px}}
+  @media(max-width:767px){.hero{margin:0 8px;min-height:620px;height:82svh;max-height:800px}.hero-content{padding-bottom:32px}.hero h1{font-size:clamp(3.4rem,13vw,5rem)}.hero-eyebrow{font-size:10px;letter-spacing:.08em}.hero-strip{gap:16px}.hero-strip div{padding-right:16px;margin-right:0}.hero-strip div:last-child{display:none}.hero-sub{font-size:16px}.section{padding:70px 0}.visit-grid{grid-template-columns:1fr;gap:36px}.visit-grid h3{margin-top:15px}.quick-info .item{padding:22px 18px}.quick-info .v{font-size:18px}.mobile-nav{visibility:hidden}.mobile-nav.open{visibility:visible}.res-form{min-width:0}.footer-grid>*{min-width:0}}
+  @media(max-width:360px){.wrap{padding-left:20px;padding-right:20px}.hero-ctas{gap:8px}.hero-ctas .btn{padding:12px 14px}.logo{font-size:1.1rem}}
+
+.reservation-note{font-size:13px;color:var(--ink-soft);line-height:1.7;margin:8px 0 18px}.res-confirm .btn{margin:8px}.footer-col a,.contact-mini a{overflow-wrap:anywhere}
+.mobile-nav{visibility:hidden}.mobile-nav.open{visibility:visible}.skip-link{position:fixed;top:-80px;left:20px;z-index:999;background:var(--white);padding:14px 20px;color:var(--aegean)}.skip-link:focus{top:12px}
+  #yorumlar{overflow:hidden;background:#f1f5f3}
+  #yorumlar .section-head{margin-bottom:32px}
+  #yorumlar .testi-grid{display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:none;scroll-behavior:auto;scrollbar-width:none;-ms-overflow-style:none;background:transparent;padding:12px 2px 24px}
+  #yorumlar .testi-grid::-webkit-scrollbar{display:none;width:0;height:0}
+  #yorumlar .testi-grid:focus-visible{outline:2px solid var(--aegean);outline-offset:5px;border-radius:30px}
+  #yorumlar .testi-card{flex:0 0 360px;min-width:0;scroll-snap-align:start;background:var(--white);padding:30px;gap:22px;border-radius:32px;border:1px solid #e1e9e5;box-shadow:0 8px 22px rgba(18,55,79,.045);transition:border-color .2s,box-shadow .2s}
+  #yorumlar .testi-card:hover{border-color:#b9cfcc;box-shadow:0 10px 24px rgba(18,55,79,.08)}
+  #yorumlar .testi-card .review-topic{align-self:flex-start;background:#edf4f3;border-radius:999px;padding:7px 13px;letter-spacing:.025em}
+  #yorumlar .testi-card .who{border-top:1px solid #edf1ef;padding-top:20px}
+  #yorumlar .testi-avatar{width:44px;height:44px;background:#e9f1f2;color:var(--aegean);border-radius:50%}
+  .review-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:6px}
+  .review-controls p{font-size:13px;color:var(--ink-soft)}
+  .review-buttons{display:flex;align-items:center;gap:10px}
+  .review-control{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:1px solid #cddbd7;background:transparent;border-radius:50%;color:var(--aegean);font-size:20px;transition:background .2s}
+  .review-control:hover{background:var(--white)}
+  .review-control.review-pause{border-radius:999px;font-size:12px;font-weight:700;padding:0 17px}
+  @media(max-width:600px){#yorumlar .testi-card{flex-basis:calc(100% - 26px);padding:25px;border-radius:28px}#yorumlar .testi-grid{gap:16px}.review-controls{align-items:flex-start}.review-controls p{max-width:110px}.review-buttons{gap:7px}.review-control.review-pause{padding:0 12px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#top">İçeriğe geç</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo">Mavi <span class="mark">Kafe</span> &amp; Restaurant</a>
+    <nav class="main-nav">
+      <a href="#top">Ana Sayfa</a>
+      <a href="#menu">Menü</a>
+      <a href="#hikaye">Hikâyemiz</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#rezervasyon">Rezervasyon</a>
+      <a href="#konum">İletişim</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#rezervasyon" class="btn btn-primary">Masa Ayırt</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menüyü aç" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#top">Ana Sayfa</a>
+  <a href="#menu">Menü</a>
+  <a href="#hikaye">Hikâyemiz</a>
+  <a href="#galeri">Galeri</a>
+  <a href="#rezervasyon">Rezervasyon</a>
+  <a href="#konum">İletişim</a>
+  <a href="#rezervasyon" class="btn btn-primary" style="margin-top:20px; text-align:center; justify-content:center;">Masa Ayırt</a>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img fetchpriority="high" decoding="async" src="https://images.unsplash.com/photo-1786654735933-9a0b77970997?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="Mavi Kafe & Restaurant güneşli teras, doğal ışıkla aydınlanan masalar">
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-eyebrow"><span class="dot"></span> Yalova · Kahvaltı · Kahve · Restaurant</div>
+    <h1>Masanız <em>Hazır.</em></h1>
+    <p class="hero-sub">Sabahın ilk kahvesinden uzun akşam yemeklerine.
+    Günün en güzel molasında buluşalım.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn btn-primary">Menüyü Keşfet</a>
+      <a href="#rezervasyon" class="btn btn-outline">Masa Ayırt</a>
+    </div>
+    <div class="hero-strip">
+      <div><span class="label">Konum</span><span class="value">Yalova Merkez</span></div>
+      <div><span class="label">Her gün</span><span class="value">08:00 – 23:00</span></div>
+      <div><span class="label">Servis</span><span class="value">Kahvaltı · Kahve · Restaurant</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUICK INFO ============ -->
+<section class="quick-info">
+  <div class="wrap">
+    <div class="item">
+      <div class="k">Her gün</div>
+      <div class="v">08:00 – 23:00</div>
+    </div>
+    <div class="item">
+      <div class="k">Konum</div>
+      <div class="v">Yalova Merkez<small>Kahvaltıdan akşam yemeğine</small></div>
+    </div>
+    <div class="item">
+      <div class="k">Rezervasyon</div>
+      <div class="v"><a href="#rezervasyon" style="color:inherit;">Masa Ayırt →</a></div>
+    </div>
+    <div class="item">
+      <div class="k">Telefon</div>
+      <div class="v"><a href="tel:+905456597551" style="color:inherit;">0545 659 75 51</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAVİ'DE BUGÜN ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Bugünün Ritmi</span>
+        <h2>Mavi'de Bugün</h2>
+      </div>
+      <p>Günün her saatinin kendi karakteri var — sabahın sakinliğinden akşamın sıcaklığına.</p>
+    </div>
+    <div class="today-grid">
+      <div class="col">
+        <div class="today-card large reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1653611540493-b3a896319fbf?fm=jpg&q=80&w=1400&auto=format&fit=crop" alt="Hafta sonu kahvaltısı, geniş ahşap masada zeytin, peynir ve reçeller">
+          <div class="cap">
+            <span class="tag">Hafta Sonları · 08:00 – 13:00</span>
+            <h3>Hafta Sonu Kahvaltısı</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="today-card medium reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Şefin seçimi, fırında somon ve otlu tereyağı sunumu">
+          <div class="cap">
+            <span class="tag">Öğlen · Akşam</span>
+            <h3>Şefin Seçimi</h3>
+          </div>
+        </div>
+        <div class="today-card medium reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Baristanın hazırladığı latte art, sıcak kahve molası">
+          <div class="cap">
+            <span class="tag">Her Saat</span>
+            <h3>Kahve Molası</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DİJİTAL MENÜ ============ -->
+<section class="section bg-alt" id="menu">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Soframızdan</span>
+        <h2>Canınız bugün<br>ne ister?</h2>
+      </div>
+      <p>Kategoriye göre filtreleyin, fiyatları ve içerikleri anında görün. Sayfa yenilemeden çalışır.</p>
+    </div>
+
+    <div class="menu-filters" id="menuFilters"></div>
+    <div class="menu-grid" id="menuGrid"></div>
+    <p class="menu-note">Fiyatlara KDV dahildir. Alerjen bilgisi ve beslenme tercihlerinize uygun seçenekler için ekibimize danışabilirsiniz.</p>
+  </div>
+</section>
+
+<!-- ============ ÖNE ÇIKAN TABAKLAR ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Vitrin</span>
+        <h2>Sofranın favorileri</h2>
+      </div>
+      <p>Mutfağımızın ve bar köşemizin en çok sevilen altı lezzeti.</p>
+    </div>
+    <div class="featured-grid reveal">
+      <div class="featured-item fi-1">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1786654735933-9a0b77970997?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Güneşli terasta serpme kahvaltı sunumu">
+        <div class="cap"><span>Kahvaltı</span><h4>Serpme Kahvaltı</h4></div>
+      </div>
+      <div class="featured-item fi-2">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Mavi Burger, cheddar peyniri ve ev yapımı patates kızartması">
+        <div class="cap"><span>Burger</span><h4>Mavi Burger</h4></div>
+      </div>
+      <div class="featured-item fi-3">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1672636402078-4b957a572e4e?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Deniz mahsullü linguine, karides ve midye ile">
+        <div class="cap"><span>Makarna</span><h4>Deniz Mahsullü Linguine</h4></div>
+      </div>
+      <div class="featured-item fi-4">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2a389?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Akdeniz salatası, roka ve nar taneleri ile">
+        <div class="cap"><span>Salata</span><h4>Akdeniz Salatası</h4></div>
+      </div>
+      <div class="featured-item fi-5">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="San Sebastian Cheesecake, karamelize üst kısmıyla">
+        <div class="cap"><span>Tatlı</span><h4>San Sebastian Cheesecake</h4></div>
+      </div>
+      <div class="featured-item fi-6">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1531441802565-2948024f1b22?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Latte art ile hazırlanmış flat white kahve">
+        <div class="cap"><span>Kahve</span><h4>Flat White</h4></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HİKÂYEMİZ ============ -->
+<section class="section bg-alt" id="hikaye">
+  <div class="wrap">
+    <div class="split reveal">
+      <div class="split-media">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1748540459503-19efc015143b?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Mavi Kafe'de hazırlanan zengin bir sofra">
+        <div class="float-tag">
+          <div class="num">2019'dan beri</div>
+          <div class="txt">Yalova'da aynı özenle</div>
+        </div>
+      </div>
+      <div class="split-text">
+        <span class="kicker">Hikâyemiz</span>
+        <h2>Bir Masadan Daha Fazlası</h2>
+        <p>Mavi Kafe & Restaurant, iyi bir kahvaltının ve doğru demlenmiş bir kahvenin, günün en değerli molası olduğuna inanan bir mutfaktan doğdu. Her tabak, malzemenin kendi lezzetine güvenerek, sade ama özenli bir dille hazırlanır.</p>
+        <p>Bizim için mesele sadece yemek değil; masaya oturan herkesin biraz yavaşlaması, sohbetin uzaması. Ege'nin doğal ışığını ve sıcak dokusunu Yalova'nın merkezine taşıdık — kalabalık değil, samimi bir sofra kurmak için.</p>
+        <div class="signature">— Mavi Kafe & Restaurant Mutfağı</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MUTFAĞIMIZ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="split reverse reveal">
+      <div class="split-media">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1579265898841-79c7890d69cf?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Mutfakta özenle hazırlanan bir sunum">
+      </div>
+      <div class="split-text">
+        <span class="kicker">Mutfaktan</span>
+        <h2>Mutfağımız</h2>
+        <p>Sebzelerimiz günlük seçilir, ekmeğimiz her sabah taze pişer. Soslarımızı kendimiz hazırlar, kahve çekirdeklerimizi özenle seçilmiş kavurucularla çalışarak temin ederiz.</p>
+        <p>Mutfak ekibimiz, her tabağı gösterişten çok lezzete odaklanarak kurgular — malzemenin kalitesi konuşsun, biz sadece doğru şekilde bir araya getirelim isteriz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERİ ============ -->
+<section class="section bg-alt" id="galeri">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Galeri</span>
+        <h2>Mavi'den kareler</h2>
+      </div>
+      <p>Mekânı, tabakları ve anları görsellerle keşfedin.</p>
+    </div>
+    <div class="gallery-tabs" id="galleryTabs"></div>
+    <div class="masonry" id="galleryGrid"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Fotoğraf galerisi">
+  <button class="lightbox-close" id="lbClose" aria-label="Kapat">✕</button>
+  <button class="lightbox-prev" id="lbPrev" aria-label="Önceki görsel">‹</button>
+  <img id="lbImage" src="" alt="">
+  <button class="lightbox-next" id="lbNext" aria-label="Sonraki görsel">›</button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<!-- Günün farklı saatleri için ziyaret önerileri -->
+<section class="section visit-section">
+  <div class="wrap">
+    <div class="section-head"><div><span class="kicker">Kendinize vakit ayırın</span><h2>Her buluşmaya<br>bir yerimiz var.</h2></div><p>Bir fincanla başlayan sohbet, paylaşılan bir tatlı, uzayan bir akşam. Mavi'de aceleye yer yok.</p></div>
+    <div class="visit-grid">
+      <article><span class="visit-label">SABAH</span><h3>Güne birlikte başlayalım.</h3><p>Sıcak ekmek, sofranın ortasına gelen kahvaltılıklar ve tazelenen çay. Hafta sonu kahvaltısı 08:00–13:00 arasında.</p><a href="#menu" data-menu-category="Kahvaltı">Kahvaltı soframız <span>↗</span></a></article>
+      <article><span class="visit-label">GÜN ORTASI</span><h3>Küçük bir kahve molası.</h3><p>Özenle demlenen bir kahveye mutfaktan bir dilim tatlı eşlik etsin. Günün geri kalanı biraz bekleyebilir.</p><a href="#menu" data-menu-category="Kahveler">Kahvenizi seçin <span>↗</span></a></article>
+      <article><span class="visit-label">AKŞAM</span><h3>Sohbet sofrada uzasın.</h3><p>Sevdiğiniz insanlarla aynı masada; mevsimin malzemeleri, özenli tabaklar ve sakin bir akşam.</p><a href="#rezervasyon">Bir masa ayıralım <span>↗</span></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REZERVASYON ============ -->
+<section class="section bg-alt" id="yorumlar" aria-labelledby="reviewsHeading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="kicker">Sofradan sohbetler</span><h2 id="reviewsHeading">Misafirlerimiz Ne Diyor?</h2></div>
+      <p class="reviews-note">Örnek yorumlar · Bu bölümdeki metinler temsili olarak hazırlanmıştır; gerçek müşteri değerlendirmeleri değildir.</p>
+    </div>
+    <div class="testi-grid" id="testimonialsGrid" tabindex="0" role="region" aria-label="Kaydırılabilir misafir yorumları"></div>
+    <div class="review-controls">
+      <p>Sofradan sohbetler, birbiri ardına.</p>
+      <div class="review-buttons">
+        <button type="button" class="review-control review-pause" id="reviewsPause" aria-pressed="false">Duraklat</button>
+        <button type="button" class="review-control" id="reviewsPrev" aria-label="Önceki yorum" aria-controls="testimonialsGrid">←</button>
+        <button type="button" class="review-control" id="reviewsNext" aria-label="Sonraki yorum" aria-controls="testimonialsGrid">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reserve-section" id="rezervasyon">
+  <div class="wrap">
+    <div class="reserve-grid">
+      <div>
+        <span class="kicker">Rezervasyon</span>
+        <h2>Güzel bir buluşma<br>masanızla başlar.</h2>
+        <p>Bir kahvaltı, baş başa bir akşam ya da kalabalık bir buluşma. Detayları seçin, rezervasyon talebinizi WhatsApp üzerinden bize iletin.</p>
+        <div class="reserve-facts">
+          <div class="f"><span class="ic">☏</span><div class="tx"><b>Telefonla da ulaşabilirsiniz</b><span><a href="tel:+905456597551">0545 659 75 51</a></span></div></div>
+          <div class="f"><span class="ic">✻</span><div class="tx"><b>Grup rezervasyonları için not bırakın</b><span>10 kişi ve üzeri organizasyonlar için özel destek</span></div></div>
+          <div class="f"><span class="ic">◷</span><div class="tx"><b>Rezervasyon onayı</b><span>Masa ayırma işlemi işletmenin onayıyla tamamlanır</span></div></div>
+        </div>
+      </div>
+
+      <div class="res-form">
+        <form id="reserveForm" class="res-form-body">
+          <div class="grid2">
+            <div class="field">
+              <label for="resDate">Tarih</label>
+              <input type="date" id="resDate" required>
+            </div>
+            <div class="field">
+              <label for="resTime">Saat</label>
+              <select id="resTime" required>
+                <option value="">Saat seçin</option>
+                <option>08:00</option><option>09:00</option><option>10:00</option>
+                <option>12:00</option><option>13:00</option><option>14:00</option>
+                <option>18:00</option><option>19:00</option><option>20:00</option>
+                <option>21:00</option><option>22:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="resGuests">Kişi Sayısı</label>
+              <select id="resGuests" required>
+                <option value="">Seçin</option>
+                <option>1 Kişi</option><option>2 Kişi</option><option>3 Kişi</option>
+                <option>4 Kişi</option><option>5 Kişi</option><option>6+ Kişi</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="resName">Ad Soyad</label>
+              <input type="text" id="resName" autocomplete="name" minlength="3" maxlength="100" placeholder="Adınız Soyadınız" required>
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="resPhone">Telefon</label>
+              <input type="tel" id="resPhone" autocomplete="tel" inputmode="tel" pattern="[+0-9 ()-]{10,20}" placeholder="0 5xx xxx xx xx" required>
+            </div>
+            <div class="field">
+              <label for="resEmail">E-posta <span style="font-weight:400; color:var(--ink-faint);">(opsiyonel)</span></label>
+              <input type="email" id="resEmail" autocomplete="email" placeholder="ornek@eposta.com">
+            </div>
+          </div>
+          <div class="field">
+            <label for="resNote">Not</label>
+            <textarea id="resNote" maxlength="1000" placeholder="Özel bir isteğiniz varsa belirtin (doğum günü, pencere kenarı vb.)"></textarea>
+          </div>
+          <p class="reservation-note">Sonraki adımda talebinizi WhatsApp’tan gönderebilirsiniz. Rezervasyonunuz, ekibimizin onayıyla kesinleşir.</p>
+          <button type="submit" class="btn btn-primary res-submit">Rezervasyon Talebi Oluştur <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div class="res-confirm" id="resConfirm" role="status" tabindex="-1">
+          <div class="check">✓</div>
+          <h3>Son bir adım: talebinizi gönderin.</h3>
+          <p id="resConfirmDetail">Hazırladığınız bilgileri WhatsApp üzerinden ekibimizle paylaşın.</p>
+          <a class="btn btn-primary" id="resWhatsapp" target="_blank" rel="noopener noreferrer">WhatsApp’tan Gönder ↗</a>
+          <button class="btn btn-ghost" id="resNewBtn">Yeni bir rezervasyon oluştur</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BİRLİKTE KUTLAYALIM ============ -->
+<section class="group-band">
+  <div class="group-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1755632540801-8eaf8eb22e1d?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Akşam kutlaması için hazırlanmış uzun masa düzeni">
+  </div>
+  <div class="group-text reveal">
+    <span class="kicker">Özel Günler</span>
+    <h2>Birlikte Kutlayalım</h2>
+    <p>Doğum günlerinden iş yemeklerine, arkadaş buluşmalarından özel organizasyonlara kadar; ekibimiz masanızı sizin için özenle hazırlar.</p>
+    <div class="group-list">
+      <span>Doğum Günü</span>
+      <span>İş Yemekleri</span>
+      <span>Arkadaş Buluşmaları</span>
+      <span>Özel Organizasyonlar</span>
+    </div>
+    <a href="#rezervasyon" class="btn btn-primary">Organizasyon Talebi</a>
+  </div>
+</section>
+
+<!-- ============ ÇALIŞMA SAATLERİ + KONUM ============ -->
+<section class="section" id="konum">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Bize Ulaşın</span>
+        <h2>Çalışma Saatleri &amp; Konum</h2>
+      </div>
+      <p>Yalova Merkez'de, şehrin içinden kolay ulaşılabilir bir adreste.</p>
+    </div>
+
+    <div class="hl-grid reveal">
+      <div class="hours-col">
+        <h3>Çalışma Saatleri</h3>
+        <div class="hours-row"><span class="d">Pazartesi – Cuma</span><span class="t">08:00 – 23:00</span></div>
+        <div class="hours-row today"><span class="d">Cumartesi</span><span class="t">08:00 – 00:00</span></div>
+        <div class="hours-row"><span class="d">Pazar</span><span class="t">08:00 – 00:00</span></div>
+
+        <div class="contact-mini">
+          <div>
+            <a href="tel:+905456597551">0545 659 75 51</a>
+            <span>Ziyaretinizi planlayın</span>
+          </div>
+          <div>
+            <a href="mailto:mustafa82oner@gmail.com">mustafa82oner@gmail.com</a>
+            <span>Ziyaretiniz için</span>
+          </div>
+          <div>
+            <a href="#konum">Mavi Kafe & Restaurant, Yalova Merkez / Yalova</a>
+            <span>Yalova / Marmara</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-col">
+        <div class="map-fallback">
+          <div class="map-pin"><span>M</span></div>
+          <p>Yalova Merkez, Yalova</p>
+          <small>Yalova merkezini haritada keşfedin</small>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Yalova+Merkez" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Yalova Haritasını Aç ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Mavi Kafe & Restaurant</div>
+        <p>İyi kahve, özenli tabaklar ve güzel sohbetler için — Yalova'nın merkezinde, doğal ışıkla dolu bir sofra.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Keşfet</h5>
+        <a href="#menu">Menü</a>
+        <a href="#rezervasyon">Rezervasyon</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#hikaye">Hikâyemiz</a>
+        <a href="#yorumlar">Misafir Yorumları</a>
+      </div>
+      <div class="footer-col">
+        <h5>Bilgi</h5>
+        <a href="#konum">Konum</a>
+        <a href="#konum">Çalışma Saatleri</a>
+        <a href="tel:+905456597551">Telefon</a>
+        <a href="#galeri">Mavi’den Kareler</a>
+      </div>
+      <div class="footer-col">
+        <h5>İletişim</h5>
+        <a href="tel:+905456597551">0545 659 75 51</a>
+        <a href="mailto:mustafa82oner@gmail.com">mustafa82oner@gmail.com</a>
+        <a href="#konum">Yalova Merkez / Yalova</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mavi Kafe & Restaurant</span>
+      <span>Tasarım & geliştirme · MK Digital Systems</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY ACTION BAR ============ -->
+<nav class="mobile-bar" aria-label="Hızlı işlemler">
+  <div class="row">
+    <a href="#menu"><span class="ic">☰</span>Menü</a>
+    <a href="tel:+905456597551"><span class="ic">☏</span>Ara</a>
+    <a href="#konum"><span class="ic">↗</span>Yol Tarifi</a>
+    <a href="#rezervasyon"><span class="ic">▤</span>Rezervasyon</a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =========================================================
+     MERKEZİ VERİ YAPISI
+     Bu demo, ileride gerçek bir işletmeye uyarlanırken
+     menuItems / galleryImages / testimonials / openingHours
+     gibi verilerin tek noktadan güncellenebilmesi için
+     merkezi diziler halinde tutulur.
+  ========================================================= */
+
+  const menuCategories = [
+    "Tümü","Kahvaltı","Başlangıçlar","Ana Yemekler","Burger",
+    "Makarna","Salata","Tatlılar","Kahveler","Soğuk İçecekler"
+  ];
+
+  const menuItems = [
+    {cat:"Kahvaltı", name:"Mavi Kahvaltı", desc:"Sahanda yumurta, peynir seçkisi, zeytin, domates, salatalık, ev yapımı reçel, bal-kaymak ve sıcak ekmek.", price:"620₺", img:"https://images.unsplash.com/photo-1653611540493-b3a896319fbf?fm=jpg&q=70&w=200&auto=format&fit=crop", badge:"Çok Sevilen"},
+    {cat:"Kahvaltı", name:"Serpme Kahvaltı (2 Kişilik)", desc:"Geniş peynir ve zeytin tabağı, mevsim sebzeleri, çeşit çeşit reçeller, sucuklu yumurta eşliğinde.", price:"980₺", img:"https://images.unsplash.com/photo-1748540459503-19efc015143b?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+    {cat:"Kahvaltı", name:"Menemen", desc:"Domates, biber ve yumurta ile geleneksel tarif, tereyağında pişirilir.", price:"340₺"},
+    {cat:"Kahvaltı", name:"Avokadolu Ekşi Maya", desc:"Ekşi maya ekmek üzerinde ezilmiş avokado, poşe yumurta, pul biber.", price:"380₺", img:"https://images.unsplash.com/photo-1608480695771-c4bb16a829d1?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+
+    {cat:"Başlangıçlar", name:"Zeytinyağlılar Tabağı", desc:"Enginar, yaprak sarma, közlenmiş biber ve ev yapımı humus.", price:"280₺"},
+    {cat:"Başlangıçlar", name:"Akdeniz Meze Tabağı", desc:"Zeytin ezmesi, cacık, patlıcan salatası, kızarmış ekmek eşliğinde.", price:"260₺"},
+
+    {cat:"Ana Yemekler", name:"Izgara Bonfile", desc:"Otlu tereyağı, közlenmiş sebzeler ve patates püresi eşliğinde.", price:"850₺", badge:"Şef Önerisi"},
+    {cat:"Ana Yemekler", name:"Fırında Somon", desc:"Limon otlu tereyağında, kinoa salatası ile servis edilir.", price:"720₺", img:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+    {cat:"Ana Yemekler", name:"Tavuk Şiş", desc:"Marine edilmiş tavuk göğsü, bulgur pilavı ve közlenmiş sebze ile.", price:"460₺"},
+
+    {cat:"Burger", name:"Mavi Burger", desc:"Dana köfte, cheddar, karamelize soğan, özel sos ve ev yapımı patates kızartması ile.", price:"420₺", img:"https://images.unsplash.com/photo-1610440042657-612c34d95e9f?fm=jpg&q=70&w=200&auto=format&fit=crop", badge:"Çok Sevilen"},
+    {cat:"Burger", name:"Klasik Cheeseburger", desc:"Dana köfte, cheddar peyniri, marul, domates ve turşu.", price:"380₺", img:"https://images.unsplash.com/photo-1596956470007-2bf6095e7e16?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+
+    {cat:"Makarna", name:"Fettuccine Alfredo", desc:"Kremalı parmesan sos, taze çıtır ekmek eşliğinde.", price:"380₺"},
+    {cat:"Makarna", name:"Deniz Mahsullü Linguine", desc:"Karides, midye ve kalamar, beyaz şarap soslu.", price:"480₺", img:"https://images.unsplash.com/photo-1672636402078-4b957a572e4e?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+
+    {cat:"Salata", name:"Akdeniz Salatası", desc:"Roka, keçi peyniri, ceviz, nar taneleri ve bal-hardal sos.", price:"320₺", img:"https://images.unsplash.com/photo-1523986371872-9d3ba2e2a389?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+    {cat:"Salata", name:"Sezar Salata", desc:"Izgara tavuk, parmesan, kruton ve klasik sezar sos.", price:"340₺"},
+
+    {cat:"Tatlılar", name:"San Sebastian Cheesecake", desc:"Karamelize üstü ve ipeksi kıvamıyla evde yapılan tarif.", price:"260₺", img:"https://images.unsplash.com/photo-1524351199678-941a58a3df50?fm=jpg&q=70&w=200&auto=format&fit=crop", badge:"Çok Sevilen"},
+    {cat:"Tatlılar", name:"Tiramisu", desc:"Espresso ile ıslatılmış kedidili, mascarpone krema ile.", price:"240₺", img:"https://images.unsplash.com/photo-1702920375096-5ae53044d11c?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+    {cat:"Tatlılar", name:"Fıstıklı Baklava (4 Adet)", desc:"El açması yufka ve Antep fıstığı ile.", price:"220₺"},
+
+    {cat:"Kahveler", name:"Flat White", desc:"Çift ölçü espresso, kadifemsi süt köpüğü ile.", price:"150₺", img:"https://images.unsplash.com/photo-1531441802565-2948024f1b22?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+    {cat:"Kahveler", name:"V60", desc:"Filtre kahve, günün çekirdeği ile demlenir.", price:"160₺"},
+    {cat:"Kahveler", name:"Cappuccino", desc:"Klasik İtalyan tarifiyle hazırlanır.", price:"140₺", img:"https://images.unsplash.com/photo-1497636577773-f1231844b336?fm=jpg&q=70&w=200&auto=format&fit=crop"},
+    {cat:"Kahveler", name:"Türk Kahvesi", desc:"Lokum eşliğinde, geleneksel usulde pişirilir.", price:"120₺"},
+
+    {cat:"Soğuk İçecekler", name:"Cold Brew", desc:"12 saat soğuk demleme, buzlu servis edilir.", price:"170₺"},
+    {cat:"Soğuk İçecekler", name:"Limonata", desc:"Taze sıkılmış limon ve nane yaprağı ile.", price:"130₺"},
+    {cat:"Soğuk İçecekler", name:"Buzlu Latte", desc:"Soğuk süt köpüğü ile hazırlanan yaz favorisi.", price:"175₺"}
+  ];
+
+  const galleryCategories = ["Tümü","Mekân","Tabaklar","Kahve","Anlar"];
+  const galleryImages = [
+    {cat:"Mekân", src:"https://images.unsplash.com/photo-1786654735933-9a0b77970997?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Güneşli teras, doğal ışıkla aydınlanan masalar"},
+    {cat:"Tabaklar", src:"https://images.unsplash.com/photo-1610440042657-612c34d95e9f?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Mavi Burger yakın çekim"},
+    {cat:"Kahve", src:"https://images.unsplash.com/photo-1541167760496-1628856ab772?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Baristanın hazırladığı latte art"},
+    {cat:"Mekân", src:"https://images.unsplash.com/photo-1700519139807-eb1a00c6a8d8?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Restoran dış cephesi ve masalar"},
+    {cat:"Tabaklar", src:"https://images.unsplash.com/photo-1672636402078-4b957a572e4e?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Deniz mahsullü linguine tabağı"},
+    {cat:"Anlar", src:"https://images.unsplash.com/photo-1755632540801-8eaf8eb22e1d?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Akşam yemeği için hazırlanmış uzun masa"},
+    {cat:"Tabaklar", src:"https://images.unsplash.com/photo-1524351199678-941a58a3df50?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"San Sebastian Cheesecake dilimi"},
+    {cat:"Kahve", src:"https://images.unsplash.com/photo-1497636577773-f1231844b336?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Cappuccino fincanı"},
+    {cat:"Mekân", src:"https://images.unsplash.com/photo-1786609900261-2779385423ac?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Bahçe içindeki dış mekân masaları"},
+    {cat:"Tabaklar", src:"https://images.unsplash.com/photo-1523986371872-9d3ba2e2a389?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Akdeniz salatası mavi kâsede"},
+    {cat:"Anlar", src:"https://images.unsplash.com/photo-1653611540493-b3a896319fbf?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Ahşap masada zengin kahvaltı sofrası"},
+    {cat:"Kahve", src:"https://images.unsplash.com/photo-1531441802565-2948024f1b22?fm=jpg&q=75&w=700&auto=format&fit=crop", alt:"Flat white, beyaz fincanda latte art"}
+  ];
+
+  // Illustrative content only; replace with verified, permissioned reviews before presenting as authentic feedback.
+  const testimonials = [
+    {initials:"E. K.", topic:"Kahvaltı", text:"İki kişi serpme kahvaltı söyledik, çeşitler yeterliydi. Özellikle sıcak ekmek ve reçelleri sevdik. Uzun uzun kahvaltı yapmak isteyenlere tavsiye ederim."},
+    {initials:"M. Y.", topic:"Temizlik ve hijyen", text:"Oturduğumuz masa ve servis takımları tertemizdi. Bizden önce kalkan masanın da özenle temizlendiğini gördüm. İlk izlenimimiz olumluydu."},
+    {initials:"A. D.", topic:"Kahve", text:"Sade kahve seviyorum, flat white tam istediğim kıvamdaydı. Süt kahvenin tadını bastırmıyordu. Yanında tatlı söylemeden de keyifle içiliyor."},
+    {initials:"S. A.", topic:"Kahvaltı", text:"Menemen sıcak geldi, ekmeği de tazeydi. Kahvaltıda çok fazla çeşit yerine sevdiği birkaç şeyi seçmek isteyenler için güzel seçenekler var."},
+    {initials:"B. T.", topic:"Servis", text:"Sipariş verirken içerikleri sorduk, acele ettirmeden anlattılar. Masayla ilgilenmeleri kararındaydı; sohbetimiz de bölünmedi."},
+    {initials:"D. Ç.", topic:"Temizlik ve hijyen", text:"Çocukla geldiğimiz için temizliğe özellikle dikkat ediyoruz. Masamız, sandalyeler ve kullandığımız lavabo bakımlıydı. Rahat ettik."},
+    {initials:"C. E.", topic:"Akşam yemeği", text:"Bonfile ve salata söyledik. Et istediğimiz pişme derecesindeydi, salatanın sosu da hafifti. Akşam yemeği için yeniden tercih ederiz."},
+    {initials:"Z. B.", topic:"Tatlı", text:"San Sebastian'ı kahvenin yanında paylaştık. Kıvamını beğendim, bir dilim ikimize yetti. Tatlı molası için güzel bir seçenek."},
+    {initials:"O. G.", topic:"Kahvaltı", text:"Pazar kahvaltısına arkadaşlarla geldik. Peynirler ve zeytinler güzeldi, çay da sıcak servis edildi. Hafta sonu için masa ayırtmak iyi fikir."},
+    {initials:"İ. S.", topic:"Ortam", text:"Öğleden sonra uğradık; içerisi aydınlık ve ferahtı. Müzik sohbeti bastırmıyordu. Bir şeyler içip sakin sakin oturmak hoşumuza gitti."},
+    {initials:"F. Ö.", topic:"Temizlik ve hijyen", text:"Bardaklarda ve çatal bıçaklarda leke yoktu. Servis alanı da düzenli görünüyordu. Böyle küçük ayrıntılara dikkat edilmesini önemsiyorum."},
+    {initials:"H. U.", topic:"Burger", text:"Burgerin köftesi lezzetliydi, patatesler de sıcak geldi. Porsiyonu benim için yeterliydi. Öğle yemeğinde tekrar söyleyebilirim."},
+    {initials:"N. P.", topic:"Makarna", text:"Alfredo'nun sosu makarnaya güzel dağılmıştı, tabağın altında birikmiyordu. Yoğun bir saatte biraz bekledik ama yemeğimiz sıcak geldi."},
+    {initials:"T. M.", topic:"Ailece kahvaltı", text:"Ailecek kahvaltı için geldik. Masada herkesin sevdiği bir şey vardı. Özellikle yumurta ve bal-kaymağı beğendik; kahvaltısını tavsiye ederim."},
+    {initials:"G. L.", topic:"Buluşmalar", text:"Arkadaşımızın doğum günü için bir araya geldik. Masa düzeni sohbet etmeye uygundu. Tatlılarımızı da birlikte getirmeleri hoş bir ayrıntıydı."}
+  ];
+  const testimonialsGrid = document.getElementById('testimonialsGrid');
+  testimonials.forEach(({initials, topic, text}) => {
+    const card = document.createElement('article');
+    card.className = 'testi-card';
+    const category = document.createElement('span');
+    category.className = 'review-topic';
+    category.textContent = topic;
+    const quote = document.createElement('blockquote');
+    const paragraph = document.createElement('p');
+    paragraph.textContent = '“' + text + '”';
+    quote.appendChild(paragraph);
+    const author = document.createElement('div');
+    author.className = 'who';
+    const avatar = document.createElement('span');
+    avatar.className = 'testi-avatar';
+    avatar.setAttribute('aria-hidden', 'true');
+    avatar.textContent = initials.replaceAll(' ', '');
+    const name = document.createElement('span');
+    name.className = 'testi-name';
+    name.textContent = initials;
+    author.append(avatar, name);
+    card.append(category, quote, author);
+    testimonialsGrid.appendChild(card);
+  });
+
+  // Native scrolling supports touch, keyboard and reduced-motion preferences.
+  const reviewsSection = document.getElementById('yorumlar');
+  const reviewsPause = document.getElementById('reviewsPause');
+  const reviewsMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let reviewsPaused = reviewsMotion.matches;
+  let reviewsHovered = false;
+  let reviewsInView = false;
+  let reviewsPosition = testimonialsGrid.scrollLeft;
+  let reviewsPreviousFrame = 0;
+  // A hidden duplicate creates a seamless loop without repeating reviews to screen readers.
+  const reviewOriginals = [...testimonialsGrid.children];
+  reviewOriginals.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('inert', '');
+    testimonialsGrid.appendChild(clone);
+  });
+  const firstReviewClone = testimonialsGrid.children[reviewOriginals.length];
+  let reviewsLoopWidth = 0;
+  function measureReviewLoop(){
+    reviewsLoopWidth = firstReviewClone.getBoundingClientRect().left - testimonialsGrid.firstElementChild.getBoundingClientRect().left;
+    reviewsPosition = testimonialsGrid.scrollLeft;
+  }
+  measureReviewLoop();
+  if('ResizeObserver' in window) new ResizeObserver(measureReviewLoop).observe(testimonialsGrid);
+  else window.addEventListener('resize', measureReviewLoop);
+  let reviewsLastInteraction = 0;
+  function updateReviewsPause(){
+    reviewsPause.textContent = reviewsPaused ? 'Oynat' : 'Duraklat';
+    reviewsPause.setAttribute('aria-pressed', String(reviewsPaused));
+    reviewsPause.setAttribute('aria-label', reviewsPaused ? 'Otomatik kaydırmayı başlat' : 'Otomatik kaydırmayı duraklat');
+  }
+  function moveReviews(direction){
+    const card = testimonialsGrid.firstElementChild;
+    if(!card) return;
+    const step = card.getBoundingClientRect().width + parseFloat(getComputedStyle(testimonialsGrid).gap);
+    const max = testimonialsGrid.scrollWidth - testimonialsGrid.clientWidth;
+    testimonialsGrid.scrollTo({left:Math.max(0, Math.min(max, testimonialsGrid.scrollLeft + step * direction)), behavior:reviewsMotion.matches ? 'instant' : 'smooth'});
+  }
+  function manualReviewMove(direction){
+    reviewsLastInteraction = Date.now();
+    moveReviews(direction);
+  }
+  document.getElementById('reviewsPrev').addEventListener('click', () => manualReviewMove(-1));
+  document.getElementById('reviewsNext').addEventListener('click', () => manualReviewMove(1));
+  reviewsPause.addEventListener('click', () => { reviewsPaused = !reviewsPaused; updateReviewsPause(); });
+  testimonialsGrid.addEventListener('keydown', event => {
+    if(event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
+      event.preventDefault();
+      manualReviewMove(event.key === 'ArrowLeft' ? -1 : 1);
+    }
+  });
+  reviewsSection.addEventListener('pointerenter', event => { if(event.pointerType === 'mouse') reviewsHovered = true; });
+  reviewsSection.addEventListener('pointerleave', () => { reviewsHovered = false; });
+  ['pointerdown', 'wheel', 'touchstart'].forEach(type => testimonialsGrid.addEventListener(type, () => { reviewsLastInteraction = Date.now(); }, {passive:true}));
+  reviewsMotion.addEventListener('change', () => { if(reviewsMotion.matches) reviewsPaused = true; updateReviewsPause(); });
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(entries => { reviewsInView = entries[0].isIntersecting; }, {threshold:.2}).observe(testimonialsGrid);
+  } else { reviewsInView = true; }
+  function animateReviews(timestamp){
+    const elapsed = reviewsPreviousFrame ? Math.min(timestamp - reviewsPreviousFrame, 50) : 0;
+    reviewsPreviousFrame = timestamp;
+    if(reviewsPaused || reviewsHovered || !reviewsInView || document.hidden || reviewsSection.contains(document.activeElement) || Date.now() - reviewsLastInteraction < 10000 || reviewsLoopWidth <= 0){
+      reviewsPosition = testimonialsGrid.scrollLeft;
+    } else {
+      reviewsPosition = (reviewsPosition + elapsed * .028) % reviewsLoopWidth;
+      testimonialsGrid.scrollLeft = reviewsPosition;
+    }
+    window.requestAnimationFrame(animateReviews);
+  }
+  window.requestAnimationFrame(animateReviews);
+  updateReviewsPause();
+
+  const openingHours = [
+    {day:"Pazartesi – Cuma", hours:"08:00 – 23:00"},
+    {day:"Cumartesi", hours:"08:00 – 00:00"},
+    {day:"Pazar", hours:"08:00 – 00:00"}
+  ];
+
+  const contact = {
+    phone:"0545 659 75 51",
+    email:"mustafa82oner@gmail.com",
+    address:"Mavi Kafe & Restaurant, Yalova Merkez / Yalova"
+  };
+
+  /* =========================================================
+     HEADER: sticky shrink + mobile menu
+  ========================================================= */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('shrink', window.scrollY > 40);
+  }, {passive:true});
+
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const scrim = document.getElementById('scrim');
+  function closeMobileNav(){
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileNav.classList.remove('open');
+    scrim.classList.remove('open');
+  }
+  hamburger.addEventListener('click', function(){
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    scrim.classList.toggle('open', isOpen);
+  });
+  scrim.addEventListener('click', closeMobileNav);
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+  /* =========================================================
+     MENÜ FİLTRE + RENDER
+  ========================================================= */
+  const menuFiltersEl = document.getElementById('menuFilters');
+  const menuGridEl = document.getElementById('menuGrid');
+
+  menuCategories.forEach(function(cat, i){
+    const btn = document.createElement('button');
+    btn.className = 'filter-pill' + (i === 0 ? ' active' : '');
+    btn.textContent = cat;
+    btn.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+    btn.addEventListener('click', () => {
+      [...btn.parentElement.children].forEach(sibling => sibling.setAttribute('aria-pressed', String(sibling === btn)));
+    });
+    btn.setAttribute('data-cat', cat);
+    btn.addEventListener('click', function(){
+      menuFiltersEl.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      filterMenu(cat);
+    });
+    menuFiltersEl.appendChild(btn);
+  });
+
+  function renderMenu(){
+    menuGridEl.innerHTML = '';
+    menuItems.forEach(function(item){
+      const el = document.createElement('div');
+      el.className = 'menu-item';
+      el.setAttribute('data-cat', item.cat);
+      el.innerHTML =
+        (item.img ? '<div class="thumb"><img loading="lazy" src="' + item.img + '" alt="' + item.name + '"></div>' : '') +
+        '<div class="body">' +
+          '<div class="row1"><h4>' + item.name + '</h4><span class="price">' + item.price + '</span></div>' +
+          '<p>' + item.desc + '</p>' +
+          (item.badge ? '<span class="badge">' + item.badge + '</span>' : '') +
+        '</div>';
+      menuGridEl.appendChild(el);
+    });
+  }
+  function filterMenu(cat){
+    document.querySelectorAll('.menu-item').forEach(function(el){
+      const match = cat === 'Tümü' || el.getAttribute('data-cat') === cat;
+      el.classList.toggle('hidden', !match);
+    });
+  }
+  renderMenu();
+  document.querySelectorAll('[data-menu-category]').forEach(link => link.addEventListener('click', () => {
+    const category = link.dataset.menuCategory;
+    [...menuFiltersEl.children].find(button => button.dataset.cat === category)?.click();
+  }));
+  document.querySelector('.group-text .btn').addEventListener('click', () => {
+    document.getElementById('resGuests').value = '6+ Kişi';
+    document.getElementById('resNote').value = 'Organizasyon talebi: ';
+  });
+
+  /* =========================================================
+     GALERİ: sekmeler + masonry + lightbox
+  ========================================================= */
+  const galleryTabsEl = document.getElementById('galleryTabs');
+  const galleryGridEl = document.getElementById('galleryGrid');
+  let currentGalleryList = galleryImages.slice();
+
+  galleryCategories.forEach(function(cat, i){
+    const btn = document.createElement('button');
+    btn.className = 'gallery-tab' + (i === 0 ? ' active' : '');
+    btn.textContent = cat;
+    btn.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+    btn.addEventListener('click', () => {
+      [...btn.parentElement.children].forEach(sibling => sibling.setAttribute('aria-pressed', String(sibling === btn)));
+    });
+    btn.addEventListener('click', function(){
+      galleryTabsEl.querySelectorAll('.gallery-tab').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      filterGallery(cat);
+    });
+    galleryTabsEl.appendChild(btn);
+  });
+
+  function renderGallery(){
+    galleryGridEl.innerHTML = '';
+    galleryImages.forEach(function(img, idx){
+      const el = document.createElement('div');
+      el.className = 'g-item';
+      el.setAttribute('data-cat', img.cat);
+      el.setAttribute('data-idx', idx);
+      el.tabIndex = 0;
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', img.alt + ' — büyüt');
+      el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(idx); } });
+      el.innerHTML = '<img loading="lazy" src="' + img.src + '" alt="' + img.alt + '">';
+      el.addEventListener('click', function(){ openLightbox(idx); });
+      galleryGridEl.appendChild(el);
+    });
+  }
+  function filterGallery(cat){
+    currentGalleryList = cat === 'Tümü' ? galleryImages.slice() : galleryImages.filter(g => g.cat === cat);
+    document.querySelectorAll('.g-item').forEach(function(el){
+      const idx = Number(el.getAttribute('data-idx'));
+      const match = cat === 'Tümü' || galleryImages[idx].cat === cat;
+      el.classList.toggle('hidden', !match);
+    });
+  }
+  renderGallery();
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lbImage = document.getElementById('lbImage');
+  const lbCaption = document.getElementById('lbCaption');
+  let lbIndex = 0;
+  let lbReturnFocus;
+  lightbox.setAttribute('aria-modal', 'true');
+
+  function visibleIndices(){
+    const activeTab = galleryTabsEl.querySelector('.gallery-tab.active').textContent;
+    return galleryImages.map((g,i)=>i).filter(i => activeTab === 'Tümü' || galleryImages[i].cat === activeTab);
+  }
+  function openLightbox(idx){
+    lbReturnFocus = document.activeElement;
+    lbIndex = idx;
+    updateLightbox();
+    lightbox.classList.add('open');
+    document.getElementById('lbClose').focus();
+    document.body.style.overflow = 'hidden';
+  }
+  function updateLightbox(){
+    const img = galleryImages[lbIndex];
+    lbImage.src = img.src.replace('w=700','w=1600').replace('q=75','q=85');
+    lbImage.alt = img.alt;
+    lbCaption.textContent = img.alt + ' — ' + img.cat;
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lbReturnFocus?.focus();
+    document.body.style.overflow = '';
+  }
+  function stepLightbox(dir){
+    const vis = visibleIndices();
+    if(!vis.length) return;
+    let pos = vis.indexOf(lbIndex);
+    if(pos === -1) pos = 0;
+    pos = (pos + dir + vis.length) % vis.length;
+    lbIndex = vis[pos];
+    updateLightbox();
+  }
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', function(){ stepLightbox(-1); });
+  document.getElementById('lbNext').addEventListener('click', function(){ stepLightbox(1); });
+  lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMobileNav();
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Tab') {
+      const buttons = [...lightbox.querySelectorAll('button')];
+      const index = buttons.indexOf(document.activeElement);
+      e.preventDefault();
+      buttons[(index + (e.shiftKey ? -1 : 1) + buttons.length) % buttons.length].focus();
+    }
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') stepLightbox(-1);
+    if(e.key === 'ArrowRight') stepLightbox(1);
+  });
+  // basit mobil swipe
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', function(e){ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+  lightbox.addEventListener('touchend', function(e){
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if(Math.abs(dx) > 50) stepLightbox(dx > 0 ? -1 : 1);
+  }, {passive:true});
+
+  /* =========================================================
+     REZERVASYON FORMU
+  ========================================================= */
+  const reserveForm = document.getElementById('reserveForm');
+  const resConfirm = document.getElementById('resConfirm');
+  const resConfirmDetail = document.getElementById('resConfirmDetail');
+  const resNewBtn = document.getElementById('resNewBtn');
+
+  // Bugünden itibaren tarih seçilebilsin
+  const resDate = document.getElementById('resDate');
+  const todayStr = new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Istanbul'}).format(new Date());
+  resDate.setAttribute('min', todayStr);
+
+  const localWeekday = new Intl.DateTimeFormat('en-US', {timeZone:'Europe/Istanbul', weekday:'short'}).format(new Date());
+  const todayHours = localWeekday === 'Sat' || localWeekday === 'Sun' ? openingHours[1].hours : openingHours[0].hours;
+  document.querySelector('.hero-strip div:nth-child(2) .label').textContent = 'Bugünkü saatler';
+  document.querySelector('.hero-strip div:nth-child(2) .value').textContent = todayHours;
+  document.querySelector('.quick-info .item:first-child .k').textContent = 'Bugünkü saatler';
+  document.querySelector('.quick-info .item:first-child .v').textContent = todayHours;
+
+  reserveForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Connect a verified reservation endpoint before enabling real submissions.
+    if (!reserveForm.reportValidity()) return;
+    const name = document.getElementById('resName').value.trim();
+    const date = resDate.value;
+    const time = document.getElementById('resTime').value;
+    const guests = document.getElementById('resGuests').value;
+
+    if (new Date(date + 'T' + time + ':00+03:00') <= new Date()) {
+      resDate.setCustomValidity('Lütfen ileri bir tarih ve saat seçin.');
+      resDate.reportValidity();
+      return;
+    }
+    const dateLabel = date ? new Date(date + 'T12:00:00').toLocaleDateString('tr-TR', {day:'numeric', month:'long', year:'numeric'}) : '';
+    resConfirmDetail.textContent = (name ? name + ', ' : '') + dateLabel + (time ? ' saat ' + time : '') + (guests ? ' için ' + guests : '') + ' için talebiniz hazır. Aşağıdaki düğmeyle WhatsApp’ı açıp mesajı gönderin. Rezervasyonunuz ekibimizin yanıtıyla kesinleşir.';
+
+    const message = ['Merhaba, Mavi Kafe için rezervasyon talebim var.', 'Ad Soyad: ' + name, 'Tarih: ' + dateLabel, 'Saat: ' + time, 'Kişi sayısı: ' + guests, 'Telefon: ' + document.getElementById('resPhone').value, document.getElementById('resEmail').value ? 'E-posta: ' + document.getElementById('resEmail').value : '', document.getElementById('resNote').value ? 'Not: ' + document.getElementById('resNote').value : ''].filter(Boolean).join('\n');
+    document.getElementById('resWhatsapp').href = 'https://wa.me/90' + contact.phone.replace(/\D/g, '').replace(/^0/, '') + '?text=' + encodeURIComponent(message);
+    reserveForm.classList.add('hide');
+    resConfirm.classList.add('show');
+    resConfirm.focus();
+  });
+
+  resDate.addEventListener('input', () => resDate.setCustomValidity(''));
+  document.getElementById('resTime').addEventListener('change', () => resDate.setCustomValidity(''));
+
+  resNewBtn.addEventListener('click', function(){
+    reserveForm.reset();
+    resConfirm.classList.remove('show');
+    reserveForm.classList.remove('hide');
+  });
+
+  /* =========================================================
+     SCROLL REVEAL (basit, IntersectionObserver ile)
+  ========================================================= */
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+})();
+</script>
+</body>
+</html>
