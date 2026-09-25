@@ -2,10 +2,11 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<!-- Portföy demosu: arama sonuçlarında gerçek bir işletme sanılmaması için (vercel.json'da X-Robots-Tag de var). -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mavi Kafe & Restaurant | Yalova</title>
-<meta name="description" content="Yalova'da Ege esintili, doğal ışıklı bir kahvaltı, kahve ve restoran deneyimi. Dijital menü, online rezervasyon ve daha fazlası — Mavi Kafe & Restaurant.">
+<title>Mavi Kafe — Kafe &amp; Restoran Web Sitesi Demosu | MK Digital Systems</title>
+<meta name="description" content="MK Digital Systems'in kafe ve restoranlar için hazırladığı örnek web sitesi: dijital menü, galeri ve rezervasyon akışı. Mavi Kafe gerçek bir işletme değildir.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -555,9 +556,25 @@
   .review-control.review-pause{border-radius:999px;font-size:12px;font-weight:700;padding:0 17px}
   @media(max-width:600px){#yorumlar .testi-card{flex-basis:calc(100% - 26px);padding:25px;border-radius:28px}#yorumlar .testi-grid{gap:16px}.review-controls{align-items:flex-start}.review-controls p{max-width:110px}.review-buttons{gap:7px}.review-control.review-pause{padding:0 12px}}
 </style>
+<style>
+  /* Portföy demosu: "Örnek proje" şeridi (MK Digital Systems demo standardı) */
+  .demo-bar{display:flex;align-items:center;gap:12px;height:32px;padding:0 24px;background:#0b1e26;color:#c9d5d8;font:400 12px/1 var(--sans, "Manrope"), system-ui, sans-serif;border-bottom:1px solid rgba(255,255,255,.1)}
+  .demo-bar b{flex:none;padding-right:12px;border-right:1px solid rgba(255,255,255,.2);color:#d7b98b;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+  .demo-bar p{flex:1;min-width:0;margin:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .demo-bar a{flex:none;margin-left:auto;color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+  .demo-bar a:hover{color:#d7b98b;border-color:#d7b98b}
+  .demo-bar .short{display:none}
+  @media(max-width:640px){.demo-bar{padding:0 16px;font-size:11px}.demo-bar p,.demo-bar .full{display:none}.demo-bar .short{display:inline}}
+  .demo-sample{font-size:12px;color:var(--ink-soft);margin-top:6px}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#top">İçeriğe geç</a>
+<aside class="demo-bar" aria-label="Örnek proje bildirimi">
+  <b>Örnek proje</b>
+  <p>Mavi Kafe gerçek bir işletme değildir; MK Digital Systems’in kafe ve restoranlar için hazırladığı bir web sitesi demosudur.</p>
+  <a href="https://mk-digital-systems-seven.vercel.app/tr"><span class="short">MK Digital Systems demosu ↗</span><span class="full">MK Digital Systems ↗</span></a>
+</aside>
 
 <!-- ============ HEADER ============ -->
 <header class="site" id="siteHeader">
@@ -630,7 +647,7 @@
     </div>
     <div class="item">
       <div class="k">Telefon</div>
-      <div class="v"><a href="tel:+905456597551" style="color:inherit;">0545 659 75 51</a></div>
+      <div class="v">+90 (000) 000 00 00</div>
     </div>
   </div>
 </section>
@@ -830,9 +847,9 @@
       <div>
         <span class="kicker">Rezervasyon</span>
         <h2>Güzel bir buluşma<br>masanızla başlar.</h2>
-        <p>Bir kahvaltı, baş başa bir akşam ya da kalabalık bir buluşma. Detayları seçin, rezervasyon talebinizi WhatsApp üzerinden bize iletin.</p>
+        <p>Bir kahvaltı, baş başa bir akşam ya da kalabalık bir buluşma. Detayları seçin ve rezervasyon akışını deneyin. Bu bir demo akışıdır; gerçek bir rezervasyon oluşturulmaz.</p>
         <div class="reserve-facts">
-          <div class="f"><span class="ic">☏</span><div class="tx"><b>Telefonla da ulaşabilirsiniz</b><span><a href="tel:+905456597551">0545 659 75 51</a></span></div></div>
+          <div class="f"><span class="ic">☏</span><div class="tx"><b>Telefonla da ulaşabilirsiniz</b><span>+90 (000) 000 00 00 <em class="demo-sample">(örnek)</em></span></div></div>
           <div class="f"><span class="ic">✻</span><div class="tx"><b>Grup rezervasyonları için not bırakın</b><span>10 kişi ve üzeri organizasyonlar için özel destek</span></div></div>
           <div class="f"><span class="ic">◷</span><div class="tx"><b>Rezervasyon onayı</b><span>Masa ayırma işlemi işletmenin onayıyla tamamlanır</span></div></div>
         </div>
@@ -890,9 +907,9 @@
 
         <div class="res-confirm" id="resConfirm" role="status" tabindex="-1">
           <div class="check">✓</div>
-          <h3>Son bir adım: talebinizi gönderin.</h3>
-          <p id="resConfirmDetail">Hazırladığınız bilgileri WhatsApp üzerinden ekibimizle paylaşın.</p>
-          <a class="btn btn-primary" id="resWhatsapp" target="_blank" rel="noopener noreferrer">WhatsApp’tan Gönder ↗</a>
+          <h3>Bu bir örnek rezervasyon akışıdır.</h3>
+          <p id="resConfirmDetail">Gerçek bir rezervasyon oluşturulmadı ve bilgileriniz hiçbir yere gönderilmedi.</p>
+          <a class="btn btn-primary" id="resWhatsapp" href="https://wa.me/905456597551?text=Merhaba%20MK%20Digital%20Systems%2C%20Mavi%20Kafe%20demo%20sitesini%20inceledim.%20%C4%B0%C5%9Fletmem%20i%C3%A7in%20benzer%20bir%20web%20sitesi%20ve%20rezervasyon%20ak%C4%B1%C5%9F%C4%B1%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp’tan MK Digital Systems ile görüşün ↗</a>
           <button class="btn btn-ghost" id="resNewBtn">Yeni bir rezervasyon oluştur</button>
         </div>
       </div>
@@ -939,12 +956,12 @@
 
         <div class="contact-mini">
           <div>
-            <a href="tel:+905456597551">0545 659 75 51</a>
-            <span>Ziyaretinizi planlayın</span>
+            <span>+90 (000) 000 00 00</span>
+            <span>Örnek iletişim bilgisidir</span>
           </div>
           <div>
-            <a href="mailto:mustafa82oner@gmail.com">mustafa82oner@gmail.com</a>
-            <span>Ziyaretiniz için</span>
+            <span>info@mavi-kafe.example</span>
+            <span>Örnek iletişim bilgisidir</span>
           </div>
           <div>
             <a href="#konum">Mavi Kafe & Restaurant, Yalova Merkez / Yalova</a>
@@ -985,19 +1002,19 @@
         <h5>Bilgi</h5>
         <a href="#konum">Konum</a>
         <a href="#konum">Çalışma Saatleri</a>
-        <a href="tel:+905456597551">Telefon</a>
+        <a href="#konum">İletişim</a>
         <a href="#galeri">Mavi’den Kareler</a>
       </div>
       <div class="footer-col">
         <h5>İletişim</h5>
-        <a href="tel:+905456597551">0545 659 75 51</a>
-        <a href="mailto:mustafa82oner@gmail.com">mustafa82oner@gmail.com</a>
+        <span>+90 (000) 000 00 00</span>
+        <span>info@mavi-kafe.example</span>
         <a href="#konum">Yalova Merkez / Yalova</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Mavi Kafe & Restaurant</span>
-      <span>Tasarım & geliştirme · MK Digital Systems</span>
+      <span>Gerçek bir işletme değildir · Tasarım &amp; geliştirme · <a href="https://mk-digital-systems-seven.vercel.app/tr" style="text-decoration:underline;">MK Digital Systems</a></span>
     </div>
   </div>
 </footer>
@@ -1006,7 +1023,7 @@
 <nav class="mobile-bar" aria-label="Hızlı işlemler">
   <div class="row">
     <a href="#menu"><span class="ic">☰</span>Menü</a>
-    <a href="tel:+905456597551"><span class="ic">☏</span>Ara</a>
+    <a href="#konum"><span class="ic">☏</span>İletişim</a>
     <a href="#konum"><span class="ic">↗</span>Yol Tarifi</a>
     <a href="#rezervasyon"><span class="ic">▤</span>Rezervasyon</a>
   </div>
@@ -1204,8 +1221,8 @@
   ];
 
   const contact = {
-    phone:"0545 659 75 51",
-    email:"mustafa82oner@gmail.com",
+    phone:"+90 (000) 000 00 00",
+    email:"info@mavi-kafe.example",
     address:"Mavi Kafe & Restaurant, Yalova Merkez / Yalova"
   };
 
@@ -1439,10 +1456,8 @@
       return;
     }
     const dateLabel = date ? new Date(date + 'T12:00:00').toLocaleDateString('tr-TR', {day:'numeric', month:'long', year:'numeric'}) : '';
-    resConfirmDetail.textContent = (name ? name + ', ' : '') + dateLabel + (time ? ' saat ' + time : '') + (guests ? ' için ' + guests : '') + ' için talebiniz hazır. Aşağıdaki düğmeyle WhatsApp’ı açıp mesajı gönderin. Rezervasyonunuz ekibimizin yanıtıyla kesinleşir.';
-
-    const message = ['Merhaba, Mavi Kafe için rezervasyon talebim var.', 'Ad Soyad: ' + name, 'Tarih: ' + dateLabel, 'Saat: ' + time, 'Kişi sayısı: ' + guests, 'Telefon: ' + document.getElementById('resPhone').value, document.getElementById('resEmail').value ? 'E-posta: ' + document.getElementById('resEmail').value : '', document.getElementById('resNote').value ? 'Not: ' + document.getElementById('resNote').value : ''].filter(Boolean).join('\n');
-    document.getElementById('resWhatsapp').href = 'https://wa.me/90' + contact.phone.replace(/\D/g, '').replace(/^0/, '') + '?text=' + encodeURIComponent(message);
+    // Demo: the summary is shown locally; nothing is sent. The button above is a fixed MK WhatsApp CTA.
+    resConfirmDetail.textContent = (name ? name + ', ' : '') + dateLabel + (time ? ' saat ' + time : '') + (guests ? ' için ' + guests : '') + ' için örnek talep oluşturuldu. Gerçek bir rezervasyon yapılmadı ve bilgileriniz gönderilmedi. İşletmeniz için benzer bir rezervasyon akışı hakkında MK Digital Systems ile görüşebilirsiniz.';
     reserveForm.classList.add('hide');
     resConfirm.classList.add('show');
     resConfirm.focus();
